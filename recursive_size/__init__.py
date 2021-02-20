@@ -40,7 +40,17 @@ def get_size(folder_name):
             return os.stat(folder_name).st_size
 
         except Exception as exc:
-            # Send early error back to user
+            # Still couldn't read, still send error to user
+            raise RuntimeError(f'Unable to read {folder_name}') from exc
+
+    except FileNotFoundError:
+        try:
+            with open(folder_name, 'rb') as long_file:
+                # successful read
+                return len(long_file.read())
+
+        except Exception as exc:
+            # Still couldn't read, still send error to user
             raise RuntimeError(f'Unable to read {folder_name}') from exc
 
     except Exception as exc:
