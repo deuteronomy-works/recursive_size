@@ -1,4 +1,5 @@
 # This module recursively gets the size of a folder
+# The maximum file path length it can read is 263 characters
 import os
 
 
