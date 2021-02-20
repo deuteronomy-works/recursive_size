@@ -35,11 +35,15 @@ def get_size(folder_name):
     try:
         conts = os.listdir(folder_name)
 
-    except:
+    except NotADirectoryError:
         try:
             return os.stat(folder_name).st_size
 
         except Exception as exc:
+            # Send early error back to user
+            raise RuntimeError(f'Unable to read {folder_name}') from exc
+
+    except Exception as exc:
             # Send early error back to user
             raise RuntimeError(f'Unable to read {folder_name}') from exc
 
