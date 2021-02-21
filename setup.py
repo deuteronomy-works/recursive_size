@@ -12,7 +12,7 @@ setup(
 
     author="Deuteronomy Works",
     author_email="deutworks@gmail.com",
-    description="An alternative to qmlscene",
+    description="Recursively get the size of folder",
     long_description=desc,
     long_description_content_type="text/markdown",
     keywords="size, get_size, get size, recursive size, recursive_size",
