@@ -49,35 +49,10 @@ def looper(path_name):
     try:
         _ = os.listdir(path_name)
 
-    except FileNotFoundError:
-        # Probably file path is too long
-        # will attempt to read anyway
-
-        if len(path_name) > MAXIMUM_FILE_PATH_LENGTH:
-            # won't be able to read
-            print(f'ERROR - FILE NAME TOO LONG: {path_name}')
-            return 0
-
-        else:
-            try:
-                with open(path_name, 'rb') as long_file:
-                    # successful read
-                    return len(long_file.read())
-
-            except FileNotFoundError:
-                # Fix this Errno 2
-                # File could not be read, skipping
-                return 0
-
-            except:
-                # File could not be read, skipping
-                return 0
-
-    except:
-        return os.stat(path_name).st_size
+    except Exception as exc:
+        handle_single_or_except(path_name, exc)
 
     return get_size(path_name)
-
 
 
 def get_size(folder_name):
