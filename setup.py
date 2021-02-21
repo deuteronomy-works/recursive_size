@@ -24,7 +24,7 @@ setup(
          "https://github.com/deuteronomy-works/recursive_size/wiki",
         "Source Code": "https://github.com/deuteronomy-works/recursive_size",
     },
-    classifiers = [
+    classifiers=[
         "Programming Language :: Python",
         "Programming Language :: Python :: 3",
         "Development Status :: 5 - Production/Stable",
