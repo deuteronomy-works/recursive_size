@@ -18,10 +18,10 @@ setup(
     keywords="size, get_size, get size, recursive size, recursive_size",
     url="https://github.com/deuteronomy-works/recursive_size",
     project_urls={
-        "Bug Tracker": 
-        "https://github.com/deuteronomy-works/recursive_size/issues",
-        "Documentation": 
-        "https://github.com/deuteronomy-works/recursive_size/wiki",
+        "Bug Tracker":
+         "https://github.com/deuteronomy-works/recursive_size/issues",
+        "Documentation":
+         "https://github.com/deuteronomy-works/recursive_size/wiki",
         "Source Code": "https://github.com/deuteronomy-works/recursive_size",
     },
     classifiers = [
