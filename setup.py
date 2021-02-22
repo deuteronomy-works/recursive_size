@@ -7,12 +7,12 @@ LICENSE_TEXT += "GNU Library or Lesser General Public License (LGPL)"
 
 setup(
     name="recursive_size",
-    version="1.0",
+    version="1.1",
     packages=find_packages(),
 
     author="Deuteronomy Works",
     author_email="deutworks@gmail.com",
-    description="An alternative to qmlscene",
+    description="Recursively get the size of folder",
     long_description=desc,
     long_description_content_type="text/markdown",
     keywords="size, get_size, get size, recursive size, recursive_size",
