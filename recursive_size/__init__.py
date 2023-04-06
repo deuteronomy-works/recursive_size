@@ -12,6 +12,7 @@ def handle_single_or_except(path_name, except_value):
     except_type = sys.exc_info()[0]
 
     if except_type == NotADirectoryError:
+
         try:
             return os.stat(path_name).st_size
 
@@ -26,6 +27,7 @@ def handle_single_or_except(path_name, except_value):
             return 0
 
         else:
+
             try:
                 with open(path_name, 'rb') as long_file:
                     # successful read
@@ -46,13 +48,21 @@ def handle_single_or_except(path_name, except_value):
 
 
 def looper(path_name):
-    try:
-        _ = os.listdir(path_name)
 
-    except Exception as exc:
-        handle_single_or_except(path_name, exc)
+    if os.path.islink(path_name):
+        # this is a symbolic link, we should not traverse these due 
+        # to loop risks and ultimately a failure
+        return 0
 
-    return get_size(path_name)
+    else:
+
+        try:
+            _ = os.listdir(path_name)
+
+        except Exception as exc:
+            handle_single_or_except(path_name, exc)
+
+        return get_size(path_name)
 
 
 def get_size(folder_name):
