@@ -7,7 +7,7 @@ LICENSE_TEXT += "GNU Library or Lesser General Public License (LGPL)"
 
 setup(
     name="recursive_size",
-    version="1.1",
+    version="1.2",
     packages=find_packages(),
 
     author="Deuteronomy Works",
